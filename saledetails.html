@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Sale Details</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1>Sale details</h1>
+
+[ <a href="CardGames.html">Card Games</a> | <a href="Genres.html">Genres</a>|  <a href="ReferenceMaterials.html">Reference Materials</a>| <a href="Developers.html">Developers</a>|  <a href="Sales.html">Sales</a> | <a href="Customers.html">Customers</a>]
+<div id="browse" style="display: block">
+<p><strong>Browse Genres</strong></p>
+<table border="1" cellpadding="5">
+  <tr>
+    <th><a href="#">New</a></th>
+    <th></th>
+    <th>ID</th>
+    <th>Customer ID</th>
+    <th>Purchase qty</th>
+    <th>Total Cost</th>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >1</td>
+    <td >1</td>
+    <td >3</td>
+    <td >60.00</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >2</td>
+    <td >1</td>
+    <td >1</td>
+    <td >8.99</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >3</td>
+    <td >3</td>
+    <td >5</td>
+    <td >60.95</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >4</td>
+    <td >4</td>
+    <td >1</td>
+    <td >74.99</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</div> <!-- browse -->
+<div id="insert" style="display: block">
+    <form id="addGenre">
+        <legend><strong>Add Sale</strong></legend>
+          <fieldset class="fields">
+            <label> Customer id </label> <input type="text" name="customer id">
+            <label> Purchase QTY </label> <input type="text" name="purchase qty">
+            <label> Total Cost </label> <input type="text" name="totcost">
+          </fieldset>
+          <input class="btn" type="submit" id="addpurchasedate" value="Add Sale Details">
+          <input class="btn" type="button" value="cancel">
+	</form> <!--add new sale-->
+</div><!-- insert -->
+
+<p>&nbsp;</p>
+<div id="update" style="display: block">
+  <form id="updatePlanet">
+      <legend><strong>Update Sale</strong></legend>
+          <fieldset class="fields">
+          <label>ID:</label> 1
+            <label> Customer id</label> <input type="text"  name="customer id" value="1">
+            <label> Purchase QTY </label> <input type="text"  name="purchase qty" value="3">
+            <label> Total Cost </label> <input type="text"  name="totcost" value="60.00">
+    </fieldset>
+    <input class="btn" type="submit" id="UpdateSale" value="Save Sale">
+          <input class="btn" type="button" value="cancel" >
+  </form> 
+</div><!-- update -->
+<p>&nbsp;</p>
+<div id="delete" style="display: block">
+  <form id="deletePlanet">
+      <legend><strong>Delete Sale</strong></legend>
+          <fieldset class="fields">
+          <p>Are you sure you wish to delete the following?</p>
+          <label>ID:</label> 1
+            
+    </fieldset>
+    <input class="btn" type="submit" id="DeleteSale" value="Delete Sale">
+          <input class="btn" type="button" value="cancel" >
+  </form> 
+</div><!-- delete -->
+</body>
+</html>

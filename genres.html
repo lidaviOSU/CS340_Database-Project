@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>Genres</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1>Genres</h1>
+
+[ <a href="CardGames.html">Card Games</a> | <a href="Genres.html">Genres</a>|  <a href="ReferenceMaterials.html">Reference Materials</a>| <a href="Developers.html">Developers</a>|  <a href="Sales.html">Sales</a> | <a href="Customers.html">Customers</a>]
+<div id="browse" style="display: block">
+<p><strong>Browse Genres</strong></p>
+<table border="1" cellpadding="5">
+  <tr>
+    <th><a href="#">New</a></th>
+    <th></th>
+    <th>ID</th>
+    <th>genre_type</th>
+    <th>description</th>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >1</td>
+    <td >Horror</td>
+    <td>Very mature art</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >2</td>
+    <td >Tactical</td>
+    <td>Highly skill based game</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >3</td>
+    <td >Cute</td>
+    <td>Cute art, appeals to kids and young adults</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >4</td>
+    <td >Mature</td>
+    <td>Mature art</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >5</td>
+    <td >Dice</td>
+    <td>Dice rolling involved in game</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</div> <!-- browse -->
+<div id="insert" style="display: block">
+    <form id="addGenre">
+        <legend><strong>Add Genre</strong></legend>
+          <fieldset class="fields">
+            <label> Genre Type </label> <input type="text" name="genretype">
+            <label> Description </label> <input type="text" name="description">
+          </fieldset>
+          <input class="btn" type="submit" id="addgenre" value="Add a Genre">
+          <input class="btn" type="button" value="cancel">
+	</form> <!--add new genre-->
+</div><!-- insert -->
+
+<p>&nbsp;</p>
+<div id="update" style="display: block">
+  <form id="updatePlanet">
+      <legend><strong>Update Planet</strong></legend>
+          <fieldset class="fields">
+          <label>ID:</label> 1
+            <label> Genre Type </label> <input type="text" value="Horror" name="genretype">
+            <label> Description </label> <input type="text"  name="description" value="Very mature art">
+    </fieldset>
+    <input class="btn" type="submit" id="UpdateGenre" value="Save Genre">
+          <input class="btn" type="button" value="cancel" >
+  </form> 
+</div><!-- update -->
+<p>&nbsp;</p>
+<div id="delete" style="display: block">
+  <form id="deletePlanet">
+      <legend><strong>Delete Genre</strong></legend>
+          <fieldset class="fields">
+          <p>Are you sure you wish to delete the following?</p>
+          <label>ID:</label> 1
+            <label> Genre Type </label> Horror
+            
+    </fieldset>
+    <input class="btn" type="submit" id="DeleteGenre" value="Delete Genre">
+          <input class="btn" type="button" value="cancel" >
+  </form> 
+</div><!-- delete -->
+</body>
+</html>
