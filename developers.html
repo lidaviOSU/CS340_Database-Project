@@ -1,97 +1,96 @@
 <html>
 <head>
-<title>Genres</title>
+<title>Developers</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-<h1>Genres</h1>
+<h1>Developers</h1>
 
 [ <a href="CardGames.html">Card Games</a> | <a href="Genres.html">Genres</a>|  <a href="ReferenceMaterials.html">Reference Materials</a>| <a href="Developers.html">Developers</a>|  <a href="Sales.html">Sales</a> | <a href="Customers.html">Customers</a>]
 <div id="browse" style="display: block">
-<p><strong>Browse Genres</strong></p>
+<p><strong>Browse Developers</strong></p>
 <table border="1" cellpadding="5">
   <tr>
     <th><a href="#">New</a></th>
     <th></th>
-    <th>ID</th>
-    <th>genre_type</th>
+    <th>dev_id</th>
+    <th>dev_name</th>
     <th>description</th>
+    <th>staff_comments</th>
   </tr>
   <tr>
     <td><a href="#">Edit</a></td>
     <td><a href="#">Delete</a></td>
     <td align="right" >1</td>
-    <td >Horror</td>
-    <td>Very mature art</td>
+    <td >Konami Digital Entertainment B.V</td>
+    <td>Konami </td>
+    <td> </td>
   </tr>
   <tr>
     <td><a href="#">Edit</a></td>
     <td><a href="#">Delete</a></td>
     <td align="right" >2</td>
-    <td >Tactical</td>
-    <td>Highly skill based game</td>
+    <td >Nintendo Co. Ltd</td>
+    <td>Nintendo Company</td>
+    <td>popular dev for younger genertion</td>
   </tr>
   <tr>
     <td><a href="#">Edit</a></td>
     <td><a href="#">Delete</a></td>
     <td align="right" >3</td>
-    <td >Cute</td>
-    <td>Cute art, appeals to kids and young adults</td>
+    <td >Fantasy Flight Games</td>
+    <td>FFG</td>
+    <td> </td>
   </tr>
   <tr>
     <td><a href="#">Edit</a></td>
     <td><a href="#">Delete</a></td>
     <td align="right" >4</td>
-    <td >Mature</td>
-    <td>Mature art</td>
-  </tr>
-  <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
-    <td align="right" >5</td>
-    <td >Dice</td>
-    <td>Dice rolling involved in game</td>
+    <td >Wizards of the Coast</td>
+    <td> </td>
+    <td>Popular with more older generation </td>
   </tr>
 </table>
 <p>&nbsp;</p>
 </div> <!-- browse -->
 <div id="insert" style="display: block">
-    <form id="addGenre">
-        <legend><strong>Add Genre</strong></legend>
+    <form id="add_dev">
+        <legend><strong>Add Developer</strong></legend>
           <fieldset class="fields">
-            <label> Genre Type </label> <input type="text" name="genretype">
-            <label> Description </label> <input type="text" name="description">
+            <label> dev name </label> <input type="text" name="dev_name">
+            <label> description </label> <input type="text" name="description">
+            <label> staff comments </label> <input type="text" name="staff comments">
           </fieldset>
-          <input class="btn" type="submit" id="addgenre" value="Add a Genre">
+          <input class="btn" type="submit" id="add_dev" value="Add a Dev">
           <input class="btn" type="button" value="cancel">
-	</form> <!--add new genre-->
+	</form> <!--add new sale-->
 </div><!-- insert -->
 
 <p>&nbsp;</p>
 <div id="update" style="display: block">
-  <form id="updateGenre">
-      <legend><strong>Update Genre</strong></legend>
+  <form id="updateDev">
+      <legend><strong>Update Developer</strong></legend>
           <fieldset class="fields">
           <label>ID:</label> 1
-            <label> Genre Type </label> <input type="text" value="Horror" name="genretype">
-            <label> Description </label> <input type="text"  name="description" value="Very mature art">
+          <label> dev name </label> <input type="text" name="dev_name" value ="Konami Digital Entertainment B.V">
+          <label> description </label> <input type="text" name="description" value="Konami">
+          <label> staff comments </label> <input type="text" name="staff comments" value="">
     </fieldset>
-    <input class="btn" type="submit" id="UpdateGenre" value="Save Genre">
+    <input class="btn" type="submit" id="UpdateDev" value="Save Dev">
           <input class="btn" type="button" value="cancel" >
   </form> 
 </div><!-- update -->
 <p>&nbsp;</p>
 <div id="delete" style="display: block">
-  <form id="deleteGenre">
-      <legend><strong>Delete Genre</strong></legend>
+  <form id="deleteDev">
+      <legend><strong>Delete Developer</strong></legend>
           <fieldset class="fields">
           <p>Are you sure you wish to delete the following?</p>
           <label>ID:</label> 1
-            <label> Genre Type </label> Horror
             
     </fieldset>
-    <input class="btn" type="submit" id="DeleteGenre" value="Delete Genre">
+    <input class="btn" type="submit" id="DeleteDev" value="Delete Dev">
           <input class="btn" type="button" value="cancel" >
   </form> 
 </div><!-- delete -->

@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>Customers</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1>Customers</h1>
+
+[ <a href="CardGames.html">Card Games</a> | <a href="Genres.html">Genres</a>|  <a href="ReferenceMaterials.html">Reference Materials</a>| <a href="Developers.html">Developers</a>|  <a href="Sales.html">Sales</a> | <a href="Customers.html">Customers</a>]
+<div id="browse" style="display: block">
+<p><strong>Browse Customers</strong></p>
+<table border="1" cellpadding="5">
+  <tr>
+    <th><a href="#">New</a></th>
+    <th></th>
+    <th>customer_id</th>
+    <th>name</th>
+    <th>phone_num</th>
+    <th>birthday</th>
+    <th>email</th>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >1</td>
+    <td >David Luo</td>
+    <td>8186244567</td>
+    <td>1990-01-01</td>
+    <td>davidluo@gmail.com</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >2</td>
+    <td >Albert Zhang</td>
+    <td>4249615324</td>
+    <td>1996-01-08</td>
+    <td>Zhang@gmail.com</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >3</td>
+    <td >Tom Lewis</td>
+    <td>4158887654</td>
+    <td>2004-06-15</td>
+    <td>trollewis@gmail.com</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td align="right" >4</td>
+    <td >John Doe</td>
+    <td>3647415986</td>
+    <td>2010-09-06</td>
+    <td>superdoe@yahoo.com</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</div> <!-- browse -->
+<div id="insert" style="display: block">
+    <form id="add_customer">
+        <legend><strong>Add Customer</strong></legend>
+          <fieldset class="fields">
+            <label>name </label> <input type="text" name="name">
+            <label>phone number</label> <input type="text" name="phone_num">
+            <label>birthday</label> <input type="text" name="birtday">
+            <label>email</label> <input type="text" name="email">
+          </fieldset>
+          <input class="btn" type="submit" id="add_customer" value="Add a Customer">
+          <input class="btn" type="button" value="cancel">
+	</form> <!--add new Customer-->
+</div><!-- insert -->
+
+<p>&nbsp;</p>
+<div id="update" style="display: block">
+  <form id="updateCustomer">
+      <legend><strong>Update Customer</strong></legend>
+          <fieldset class="fields">
+          <label>ID:</label> 1
+          <label>name </label> <input type="text" name="name" value="John Doe">
+          <label>phone number</label> <input type="text" name="phone_num" value="3647415986">
+          <label>birthday</label> <input type="text" name="birtday" value="2010-09-06">
+          <label>email</label> <input type="text" name="email" value="superdoe@yahoo.com">
+    </fieldset>
+    <input class="btn" type="submit" id="UpdateCustomer" value="Save Customer">
+          <input class="btn" type="button" value="cancel" >
+  </form> 
+</div><!-- update -->
+<p>&nbsp;</p>
+<div id="delete" style="display: block">
+  <form id="deleteCustomer">
+      <legend><strong>Delete Customer</strong></legend>
+          <fieldset class="fields">
+          <p>Are you sure you wish to delete the following?</p>
+          <label>ID:</label> 1
+            
+    </fieldset>
+    <input class="btn" type="submit" id="DeleteCustomer" value="Delete Customer">
+          <input class="btn" type="button" value="cancel" >
+  </form> 
+</div><!-- delete -->
+</body>
+</html>
