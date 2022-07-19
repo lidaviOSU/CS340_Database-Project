@@ -2,17 +2,60 @@
 <head>
 <title>Customers</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript">
+  function showform(dowhat) {
+    /*
+    * four DIVS: browse, insert, update, delete
+    * this function sets one visible the others not
+    */
+    if (dowhat == 'insert'){
+      document.getElementById('browse').style.display = 'none';
+      document.getElementById('insert').style.display = 'block';
+      document.getElementById('update').style.display = 'none';
+      document.getElementById('delete').style.display = 'none';
+    }
+    else if (dowhat == 'update'){
+      document.getElementById('browse').style.display = 'none';
+      document.getElementById('insert').style.display = 'none';
+      document.getElementById('update').style.display = 'block';
+      document.getElementById('delete').style.display = 'none';
+    }
+    else if (dowhat == 'delete'){
+      document.getElementById('browse').style.display = 'none';
+      document.getElementById('insert').style.display = 'none';
+      document.getElementById('update').style.display = 'none';
+      document.getElementById('delete').style.display = 'block';
+    }
+    else if (dowhat == 'all'){
+      document.getElementById('browse').style.display = 'block';
+      document.getElementById('insert').style.display = 'block';
+      document.getElementById('update').style.display = 'block';
+      document.getElementById('delete').style.display = 'block';
+    }
+    else { //by default display browse
+      document.getElementById('browse').style.display = 'block';
+      document.getElementById('insert').style.display = 'none';
+      document.getElementById('update').style.display = 'none';
+      document.getElementById('delete').style.display = 'none';
+    }
+  }
+  function newCustomer() { showform('insert'); }
+  function updateCustomer(id) { showform('update'); }
+  function deleteCustomer(id) { showform ('delete'); }
+  function browseCustomers() { showform ('browse'); }
+  function showAll() { showform ('all'); }
+</script>
 </head>
 
-<body>
+<body onload="browseCustomers()">
 <h1>Customers</h1>
 
-[ <a href="CardGames.html">Card Games</a> | <a href="Genres.html">Genres</a>|  <a href="ReferenceMaterials.html">Reference Materials</a>| <a href="Developers.html">Developers</a>|  <a href="Sales.html">Sales</a> | <a href="Customers.html">Customers</a>]
+[ <a href="CardGames.html">Card Games</a> | <a href="Genres.html">Genres</a>|<a href="cardgames_genres.html">Games by Genres</a>|  <a href="ReferenceMaterials.html">Reference Materials</a>| <a href="cardgame_refmaterial.html">Games by Source Materials</a>| <a href="Developers.html">Developers</a>| <a href="cardgame_developer.html">Games By Developers</a>| <a href="Sales.html">Sales</a> | <a href="Customers.html">Customers</a>]
 <div id="browse" style="display: block">
 <p><strong>Browse Customers</strong></p>
 <table border="1" cellpadding="5">
   <tr>
-    <th><a href="#">New</a></th>
+    <th><a href="#" onClick="newCustomer()">New</a></th>
     <th></th>
     <th>customer_id</th>
     <th>name</th>
@@ -21,8 +64,8 @@
     <th>email</th>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onClick="updateCustomer('this.customer_id')">Edit</a></td>
+    <td><a href="#" onclick="deleteCustomer('this.customer_id')">Delete</a></td>
     <td align="right" >1</td>
     <td >David Luo</td>
     <td>8186244567</td>
@@ -30,8 +73,8 @@
     <td>davidluo@gmail.com</td>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onClick="updateCustomer('this.customer_id')">Edit</a></td>
+    <td><a href="#" onclick="deleteCustomer('this.customer_id')">Delete</a></td>
     <td align="right" >2</td>
     <td >Albert Zhang</td>
     <td>4249615324</td>
@@ -39,8 +82,8 @@
     <td>Zhang@gmail.com</td>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onClick="updateCustomer('this.customer_id')">Edit</a></td>
+    <td><a href="#" onclick="deleteCustomer('this.customer_id')">Delete</a></td>
     <td align="right" >3</td>
     <td >Tom Lewis</td>
     <td>4158887654</td>
@@ -48,8 +91,8 @@
     <td>trollewis@gmail.com</td>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onClick="updateCustomer('this.customer_id')">Edit</a></td>
+    <td><a href="#" onclick="deleteCustomer('this.customer_id')">Delete</a></td>
     <td align="right" >4</td>
     <td >John Doe</td>
     <td>3647415986</td>
@@ -69,7 +112,7 @@
             <label>email</label> <input type="text" name="email">
           </fieldset>
           <input class="btn" type="submit" id="add_customer" value="Add a Customer">
-          <input class="btn" type="button" value="cancel">
+          <input class="btn" type="button" value="cancel" onClick="browseCustomers()">
 	</form> <!--add new Customer-->
 </div><!-- insert -->
 
@@ -85,7 +128,7 @@
           <label>email</label> <input type="text" name="email" value="superdoe@yahoo.com">
     </fieldset>
     <input class="btn" type="submit" id="UpdateCustomer" value="Save Customer">
-          <input class="btn" type="button" value="cancel" >
+          <input class="btn" type="button" value="cancel" onClick="browseCustomers()">
   </form> 
 </div><!-- update -->
 <p>&nbsp;</p>
@@ -98,7 +141,7 @@
             
     </fieldset>
     <input class="btn" type="submit" id="DeleteCustomer" value="Delete Customer">
-          <input class="btn" type="button" value="cancel" >
+          <input class="btn" type="button" value="cancel" onClick="browseCustomers()" >
   </form> 
 </div><!-- delete -->
 </body>

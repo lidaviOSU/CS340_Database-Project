@@ -2,17 +2,60 @@
 <head>
 <title>Developers</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript">
+  function showform(dowhat) {
+    /*
+    * four DIVS: browse, insert, update, delete
+    * this function sets one visible the others not
+    */
+    if (dowhat == 'insert'){
+      document.getElementById('browse').style.display = 'none';
+      document.getElementById('insert').style.display = 'block';
+      document.getElementById('update').style.display = 'none';
+      document.getElementById('delete').style.display = 'none';
+    }
+    else if (dowhat == 'update'){
+      document.getElementById('browse').style.display = 'none';
+      document.getElementById('insert').style.display = 'none';
+      document.getElementById('update').style.display = 'block';
+      document.getElementById('delete').style.display = 'none';
+    }
+    else if (dowhat == 'delete'){
+      document.getElementById('browse').style.display = 'none';
+      document.getElementById('insert').style.display = 'none';
+      document.getElementById('update').style.display = 'none';
+      document.getElementById('delete').style.display = 'block';
+    }
+    else if (dowhat == 'all'){
+      document.getElementById('browse').style.display = 'block';
+      document.getElementById('insert').style.display = 'block';
+      document.getElementById('update').style.display = 'block';
+      document.getElementById('delete').style.display = 'block';
+    }
+    else { //by default display browse
+      document.getElementById('browse').style.display = 'block';
+      document.getElementById('insert').style.display = 'none';
+      document.getElementById('update').style.display = 'none';
+      document.getElementById('delete').style.display = 'none';
+    }
+  }
+  function newDeveloper() { showform('insert'); }
+  function updateDeveloper(id) { showform('update'); }
+  function deleteDeveloper(id) { showform ('delete'); }
+  function browseDeveloper() { showform ('browse'); }
+  function showAll() { showform ('all'); }
+</script>
 </head>
 
-<body>
+<body onload="browseDeveloper()">
 <h1>Developers</h1>
 
-[ <a href="CardGames.html">Card Games</a> | <a href="Genres.html">Genres</a>|  <a href="ReferenceMaterials.html">Reference Materials</a>| <a href="Developers.html">Developers</a>|  <a href="Sales.html">Sales</a> | <a href="Customers.html">Customers</a>]
+[ <a href="CardGames.html">Card Games</a> | <a href="Genres.html">Genres</a>|<a href="cardgames_genres.html">Games by Genres</a>|  <a href="ReferenceMaterials.html">Reference Materials</a>| <a href="cardgame_refmaterial.html">Games by Source Materials</a>| <a href="Developers.html">Developers</a>| <a href="cardgame_developer.html">Games By Developers</a>| <a href="Sales.html">Sales</a> | <a href="Customers.html">Customers</a>]
 <div id="browse" style="display: block">
 <p><strong>Browse Developers</strong></p>
 <table border="1" cellpadding="5">
   <tr>
-    <th><a href="#">New</a></th>
+    <th><a href="#" onClick="newDeveloper()">New</a></th>
     <th></th>
     <th>dev_id</th>
     <th>dev_name</th>
@@ -20,32 +63,32 @@
     <th>staff_comments</th>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onClick="updateDeveloper('this.dev_id')">Edit</a></td>
+    <td><a href="#" onclick="deleteDeveloper('this.dev_id')">Delete</a></td>
     <td align="right" >1</td>
     <td >Konami Digital Entertainment B.V</td>
     <td>Konami </td>
     <td> </td>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onClick="updateDeveloper('this.dev_id')">Edit</a></td>
+    <td><a href="#" onclick="deleteDeveloper('this.dev_id')">Delete</a></td>
     <td align="right" >2</td>
     <td >Nintendo Co. Ltd</td>
     <td>Nintendo Company</td>
     <td>popular dev for younger genertion</td>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onClick="updateDeveloper('this.dev_id')">Edit</a></td>
+    <td><a href="#" onclick="deleteDeveloper('this.dev_id')">Delete</a></td>
     <td align="right" >3</td>
     <td >Fantasy Flight Games</td>
     <td>FFG</td>
     <td> </td>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onClick="updateDeveloper('this.dev_id')">Edit</a></td>
+    <td><a href="#" onclick="deleteDeveloper('this.dev_id')">Delete</a></td>
     <td align="right" >4</td>
     <td >Wizards of the Coast</td>
     <td> </td>
@@ -63,7 +106,7 @@
             <label> staff comments </label> <input type="text" name="staff comments">
           </fieldset>
           <input class="btn" type="submit" id="add_dev" value="Add a Dev">
-          <input class="btn" type="button" value="cancel">
+          <input class="btn" type="button" value="cancel" onClick="browseDeveloper()">
 	</form> <!--add new sale-->
 </div><!-- insert -->
 
@@ -78,7 +121,7 @@
           <label> staff comments </label> <input type="text" name="staff comments" value="">
     </fieldset>
     <input class="btn" type="submit" id="UpdateDev" value="Save Dev">
-          <input class="btn" type="button" value="cancel" >
+          <input class="btn" type="button" value="cancel" onClick="browseDeveloper()">
   </form> 
 </div><!-- update -->
 <p>&nbsp;</p>
@@ -91,7 +134,7 @@
             
     </fieldset>
     <input class="btn" type="submit" id="DeleteDev" value="Delete Dev">
-          <input class="btn" type="button" value="cancel" >
+          <input class="btn" type="button" value="cancel" onClick="browseDeveloper()">
   </form> 
 </div><!-- delete -->
 </body>

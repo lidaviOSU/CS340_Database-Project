@@ -1,82 +1,75 @@
 <html>
 <head>
-<title>Sales</title>
+<title>Card Games by Source Material</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-<h1>Sales</h1>
+<h1>Card Games by SourceMaterial</h1>
 
 [ <a href="CardGames.html">Card Games</a> | <a href="Genres.html">Genres</a>|<a href="cardgames_genres.html">Games by Genres</a>|  <a href="ReferenceMaterials.html">Reference Materials</a>| <a href="cardgame_refmaterial.html">Games by Source Materials</a>| <a href="Developers.html">Developers</a>| <a href="cardgame_developer.html">Games By Developers</a>| <a href="Sales.html">Sales</a> | <a href="Customers.html">Customers</a>]
 <div id="browse" style="display: block">
-<p><strong>Browse Sales</strong></p>
+<p><strong>Browse Games by Source Material</strong></p>
 <table border="1" cellpadding="5">
   <tr>
     <th><a href="#">New</a></th>
     <th></th>
-    <th>ID</th>
-    <th>Purchase Date</th>
+    <th>CardGame Title</th>
+    <th>Source Material</th>
   </tr>
   <tr>
     <td><a href="#">Edit</a></td>
     <td><a href="#">Delete</a></td>
-    <td align="right" >1</td>
-    <td >2022-07-04</td>
+    <td>Pokemon</td>
+    <td>Looney Tunes</td>
   </tr>
   <tr>
     <td><a href="#">Edit</a></td>
     <td><a href="#">Delete</a></td>
-    <td align="right" >2</td>
-    <td >2022-07-04</td>
+    <td >Pokemon</td>
+    <td>Batman</td>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
-    <td align="right" >3</td>
-    <td >2022-07-05</td>
-  </tr>
-  <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
-    <td align="right" >4</td>
-    <td >2022-07-05</td>
   </tr>
 </table>
 <p>&nbsp;</p>
 </div> <!-- browse -->
 <div id="insert" style="display: block">
-    <form id="addSale">
-        <legend><strong>Add Sale</strong></legend>
+    <form id="addnewrelationship">
+        <legend><strong>Add New Card Game Relationship</strong></legend>
           <fieldset class="fields">
-            <label> Purchase Date </label> <input type="text" name="purchasedate">
+            <label> Card Game Title </label> <input type="text" name="cardgame_title">
+            <label> Source Material </label> <input type="text" name="source_mat">
           </fieldset>
-          <input class="btn" type="submit" id="addpurchasedate" value="Add a Sale">
+          <input class="btn" type="submit" id="addrelationship" value="Add a ReferenceMaterials relationship">
           <input class="btn" type="button" value="cancel">
-	</form> <!--add new sale-->
+	</form> <!--add new reference material-->
 </div><!-- insert -->
 
 <p>&nbsp;</p>
 <div id="update" style="display: block">
-  <form id="updateSale">
-      <legend><strong>Update Sale</strong></legend>
+  <form id="updaterefmaterial relationship">
+      <legend><strong>Update Reference Material Card Game Relationship to NULL</strong></legend>
           <fieldset class="fields">
           <label>ID:</label> 1
-            <label> Purchase Date </label> <input type="text"  name="description" value="2022-07-04">
+            <label> Card Game Title</label> <input type="text" value="Pokemon" name="dev">
+            <label> Reference Material </label> <input type="text"  name="NULL" value="Koonami">
     </fieldset>
-    <input class="btn" type="submit" id="UpdateSale" value="Save Sale">
+    <input class="btn" type="submit" id="UpdateRefMaterial" value="Save Ref Material">
           <input class="btn" type="button" value="cancel" >
   </form> 
 </div><!-- update -->
 <p>&nbsp;</p>
 <div id="delete" style="display: block">
-  <form id="deleteSale">
-      <legend><strong>Delete Sale</strong></legend>
+  <form id="deleterefmaterial">
+      <legend><strong>Delete Ref Material</strong></legend>
           <fieldset class="fields">
           <p>Are you sure you wish to delete the following?</p>
-          <label>ID:</label> 1
+            <label> Card Game Title: </label> Pokemon
+            <label> Reference Material: </label> Looney Tunes
             
     </fieldset>
-    <input class="btn" type="submit" id="DeleteSale" value="Delete Sale">
+    <input class="btn" type="submit" id="Deleterefmaterial" value="Delete ReferenceMaterial">
           <input class="btn" type="button" value="cancel" >
   </form> 
 </div><!-- delete -->

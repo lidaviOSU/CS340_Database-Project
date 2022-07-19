@@ -1,81 +1,69 @@
 <html>
 <head>
-<title>Genres</title>
+<title>Card Games by Genre</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-<h1>Genres</h1>
+<h1>Card Games by Genre</h1>
 
 [ <a href="CardGames.html">Card Games</a> | <a href="Genres.html">Genres</a>|<a href="cardgames_genres.html">Games by Genres</a>|  <a href="ReferenceMaterials.html">Reference Materials</a>| <a href="cardgame_refmaterial.html">Games by Source Materials</a>| <a href="Developers.html">Developers</a>| <a href="cardgame_developer.html">Games By Developers</a>| <a href="Sales.html">Sales</a> | <a href="Customers.html">Customers</a>]
 <div id="browse" style="display: block">
-<p><strong>Browse Genres</strong></p>
+<p><strong>Browse Games by Genre</strong></p>
 <table border="1" cellpadding="5">
   <tr>
     <th><a href="#">New</a></th>
     <th></th>
-    <th>ID</th>
-    <th>Genre Type</th>
-    <th>Description</th>
+    <th>CardGame Title</th>
+    <th>Genre</th>
   </tr>
   <tr>
     <td><a href="#">Edit</a></td>
     <td><a href="#">Delete</a></td>
-    <td align="right" >1</td>
+    <td>Magic Trading Card Game</td>
+    <td>Dice</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td >Magic Trading Card Game</td>
+    <td>Tactical</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td >Pokemon Trading Card Game</td>
+    <td>Cute</td>
+  </tr>
+  <tr>
+    <td><a href="#">Edit</a></td>
+    <td><a href="#">Delete</a></td>
+    <td >Arkham Horror: The Card Game</td>
     <td>Horror</td>
-    <td>Very mature art</td>
-  </tr>
-  <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
-    <td align="right" >2</td>
-    <td >Tactical</td>
-    <td>Highly skill based game</td>
-  </tr>
-  <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
-    <td align="right" >3</td>
-    <td >Cute</td>
-    <td>Cute art, appeals to kids and young adults</td>
-  </tr>
-  <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
-    <td align="right" >4</td>
-    <td >Mature</td>
-    <td>Mature art</td>
-  </tr>
-  <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
-    <td align="right" >5</td>
-    <td >Dice</td>
-    <td>Dice rolling involved in game</td>
   </tr>
 </table>
 <p>&nbsp;</p>
 </div> <!-- browse -->
 <div id="insert" style="display: block">
-    <form id="addGenre">
-        <legend><strong>Add Genre</strong></legend>
+    <form id="addnewrelationship">
+        <legend><strong>Add New Card Game Relationship</strong></legend>
           <fieldset class="fields">
-            <label> Genre Type </label> <input type="text" name="genretype">
-            <label> Description </label> <input type="text" name="description">
+            <label> Card Game Title </label> <input type="text" name="cardgame_title">
+            <label> Genre </label> <input type="text" name="genre_type">
           </fieldset>
-          <input class="btn" type="submit" id="addgenre" value="Add a Genre">
+          <input class="btn" type="submit" id="addrelationship" value="Add a Genre relationship">
           <input class="btn" type="button" value="cancel">
 	</form> <!--add new genre-->
 </div><!-- insert -->
 
 <p>&nbsp;</p>
 <div id="update" style="display: block">
-  <form id="updateGenre">
-      <legend><strong>Update Genre</strong></legend>
+  <form id="updateGenre relationship">
+      <legend><strong>Update Genre Card Game Relationship to NULL</strong></legend>
           <fieldset class="fields">
           <label>ID:</label> 1
-            <label> Genre Type </label> <input type="text" value="Horror" name="genretype">
-            <label> Description </label> <input type="text"  name="description" value="Very mature art">
+            <label> Card Game Title</label> <input type="text" value="Pokemon" name="genretype">
+            <label> Genre </label> <input type="text"  name="NULL" value="Very mature art">
     </fieldset>
     <input class="btn" type="submit" id="UpdateGenre" value="Save Genre">
           <input class="btn" type="button" value="cancel" >
@@ -87,8 +75,8 @@
       <legend><strong>Delete Genre</strong></legend>
           <fieldset class="fields">
           <p>Are you sure you wish to delete the following?</p>
-          <label>ID:</label> 1
-            <label> Genre Type </label> Horror
+            <label> Card Game Title: </label> Pokemon
+            <label> Genre: </label> Horror
             
     </fieldset>
     <input class="btn" type="submit" id="DeleteGenre" value="Delete Genre">

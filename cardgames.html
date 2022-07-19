@@ -50,13 +50,12 @@
 <body onload="browseCardGame()">
 <h1>Card Games</h1>
 
-[ <a href="CardGames.html">Card Games</a> | <a href="Genres.html">Genres</a>|  <a href="ReferenceMaterials.html">Reference Materials</a>| <a href="Developers.html">Developers</a>|  <a href="Sales.html">Sales</a> | <a href="Customers.html">Customers</a>]
-
+[ <a href="CardGames.html">Card Games</a> | <a href="Genres.html">Genres</a>|<a href="cardgames_genres.html">Games by Genres</a>|  <a href="ReferenceMaterials.html">Reference Materials</a>| <a href="cardgame_refmaterial.html">Games by Source Materials</a>| <a href="Developers.html">Developers</a>| <a href="cardgame_developer.html">Games By Developers</a>| <a href="Sales.html">Sales</a> | <a href="Customers.html">Customers</a>]
 <div id="browse">
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
 <table border="1" cellpadding="5">
   <tr>
-    <th><a href="#" onClick="newPerson()">New</a></th>
+    <th><a href="#" onClick="newCardGame()">New</a></th>
     <th></th>
     <th>id</th>
     <th>title</th>
@@ -64,40 +63,40 @@
     <th>price per back($)</th>
   </tr>
   <tr>
-    <td><a href="#" onClick="updateCardGame('this.personID')">Edit</a></td>
-    <td><a href="#" onclick="deleteCardGame('this.personID')">Delete</a></td>
+    <td><a href="#" onClick="updateCardGame('this.cardgame_id')">Edit</a></td>
+    <td><a href="#" onclick="deleteCardGame('this.cardgame_id')">Delete</a></td>
     <td align="right" >1</td>
     <td >Arkham Horror: The Card Game</td>
     <td align="right" >100</td>
     <td>20.00</td>
   </tr>
   <tr>
-    <td><a href="#" onClick="updateCardGame('this.personID')">Edit</a></td>
-    <td><a href="#" onclick="deleteCardGame('this.personID')">Delete</a></td>
+    <td><a href="#" onClick="updateCardGame('this.cardgame_id')">Edit</a></td>
+    <td><a href="#" onclick="deleteCardGame('this.cardgame_id')">Delete</a></td>
     <td align="right" >2</td>
     <td>Marvel Champions: The Card Game</td>
     <td align="right" >50</td>
     <td >74.99</td>
   </tr>
   <tr>
-    <td><a href="#" onClick="updateCardGame('this.personID')">Edit</a></td>
-    <td><a href="#" onclick="deleteCardGame('this.personID')">Delete</a></td>
+    <td><a href="#" onClick="updateCardGame('this.cardgame_id')">Edit</a></td>
+    <td><a href="#" onclick="deleteCardGame('this.cardgame_id')">Delete</a></td>
     <td>3</td>
     <td>Magic The Gathering</td>
     <td align="right" >200</td>
     <td>83.95</td>
   </tr>
   <tr>
-    <td><a href="#" onClick="updateCardGame('this.personID')">Edit</a></td>
-    <td><a href="#" onclick="deleteCardGame('this.personID')">Delete</a></td>
+    <td><a href="#" onClick="updateCardGame('this.cardgame_id')">Edit</a></td>
+    <td><a href="#" onclick="deleteCardGame('this.cardgame_id')">Delete</a></td>
     <td>4</td>
     <td>Pokemon Trading Card Game</td>
     <td align="right" >200</td>
     <td>12.19</td>
   </tr>
   <tr>
-    <td><a href="#" onClick="updateCardGame('this.personID')">Edit</a></td>
-    <td><a href="#" onclick="deleteCardGame('this.personID')">Delete</a></td>
+    <td><a href="#" onClick="updateCardGame('this.cardgame_id')">Edit</a></td>
+    <td><a href="#" onclick="deleteCardGame('this.cardgame_id')">Delete</a></td>
     <td>5</td>
     <td>Yu-Gi-Oh! Trading Card game</td>
     <td align="right" >150</td>
