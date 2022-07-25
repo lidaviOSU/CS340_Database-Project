@@ -1,85 +1,95 @@
 <html>
 <head>
-<title>Card Games by Genre</title>
+<title>Sale Details</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-<h1>Card Games by Genre</h1>
+<h1>Sale details</h1>
 
 [ <a href="CardGames.html">Card Games</a> | <a href="Genres.html">Genres</a>|<a href="cardgames_genres.html">Games by Genres</a>|<a href="Developers.html">Developers</a>| <a href="cardgame_developer.html">Games By Developers</a>| <a href="Sales.html">Sales</a> | <a href="Customers.html">Customers</a>]
-<div id="browse" style="display: block">
-<p><strong>Browse Games by Genre</strong></p>
+<p><strong>Browse Sales</strong></p>
 <table border="1" cellpadding="5">
   <tr>
     <th><a href="#">New</a></th>
     <th></th>
-    <th>CardGame Title</th>
-    <th>Genre</th>
+    <th>ID</th>
+    <th>Customer ID</th>
+    <th>Purchase qty</th>
+    <th>Total Cost</th>
   </tr>
   <tr>
     <td><a href="#">Edit</a></td>
     <td><a href="#">Delete</a></td>
-    <td>Magic Trading Card Game</td>
-    <td>Dice</td>
+    <td align="right" >1</td>
+    <td >1</td>
+    <td >3</td>
+    <td >60.00</td>
   </tr>
   <tr>
     <td><a href="#">Edit</a></td>
     <td><a href="#">Delete</a></td>
-    <td >Magic Trading Card Game</td>
-    <td>Tactical</td>
+    <td align="right" >2</td>
+    <td >1</td>
+    <td >1</td>
+    <td >8.99</td>
   </tr>
   <tr>
     <td><a href="#">Edit</a></td>
     <td><a href="#">Delete</a></td>
-    <td >Pokemon Trading Card Game</td>
-    <td>Cute</td>
+    <td align="right" >3</td>
+    <td >3</td>
+    <td >5</td>
+    <td >60.95</td>
   </tr>
   <tr>
     <td><a href="#">Edit</a></td>
     <td><a href="#">Delete</a></td>
-    <td >Arkham Horror: The Card Game</td>
-    <td>Horror</td>
+    <td align="right" >4</td>
+    <td >4</td>
+    <td >1</td>
+    <td >74.99</td>
   </tr>
 </table>
 <p>&nbsp;</p>
 </div> <!-- browse -->
 <div id="insert" style="display: block">
-    <form id="addnewrelationship">
-        <legend><strong>Add New Card Game Relationship</strong></legend>
+    <form id="addSale">
+        <legend><strong>Add Sale</strong></legend>
           <fieldset class="fields">
-            <label> Card Game Title </label> <input type="text" name="cardgame_title">
-            <label> Genre </label> <input type="text" name="genre_type">
+            <label> Customer id </label> <input type="text" name="customer id">
+            <label> Purchase QTY </label> <input type="text" name="purchase qty">
+            <label> Total Cost </label> <input type="text" name="totcost">
           </fieldset>
-          <input class="btn" type="submit" id="addrelationship" value="Add a Genre relationship">
+          <input class="btn" type="submit" id="addpurchasedate" value="Add Sale Details">
           <input class="btn" type="button" value="cancel">
-	</form> <!--add new genre-->
+	</form> <!--add new sale-->
 </div><!-- insert -->
 
 <p>&nbsp;</p>
 <div id="update" style="display: block">
-  <form id="updateGenre relationship">
-      <legend><strong>Update Genre Card Game Relationship to NULL</strong></legend>
+  <form id="updateSale">
+      <legend><strong>Update Sale</strong></legend>
           <fieldset class="fields">
           <label>ID:</label> 1
-            <label> Card Game Title</label> <input type="text" value="Pokemon" name="genretype">
-            <label> Genre </label> <input type="text"  name="NULL" value="Very mature art">
+            <label> Customer id</label> <input type="text"  name="customer id" value="1">
+            <label> Purchase QTY </label> <input type="text"  name="purchase qty" value="3">
+            <label> Total Cost </label> <input type="text"  name="totcost" value="60.00">
     </fieldset>
-    <input class="btn" type="submit" id="UpdateGenre" value="Save Genre">
+    <input class="btn" type="submit" id="UpdateSale" value="Save Sale">
           <input class="btn" type="button" value="cancel" >
   </form> 
 </div><!-- update -->
 <p>&nbsp;</p>
 <div id="delete" style="display: block">
-  <form id="deleteGenre">
-      <legend><strong>Delete Genre</strong></legend>
+  <form id="deleteSale">
+      <legend><strong>Delete Sale</strong></legend>
           <fieldset class="fields">
           <p>Are you sure you wish to delete the following?</p>
-            <label> Card Game Title: </label> Pokemon
-            <label> Genre: </label> Horror
+          <label>ID:</label> 1
             
     </fieldset>
-    <input class="btn" type="submit" id="DeleteGenre" value="Delete Genre">
+    <input class="btn" type="submit" id="DeleteSale" value="Delete Sale">
           <input class="btn" type="button" value="cancel" >
   </form> 
 </div><!-- delete -->
