@@ -2,6 +2,49 @@
 <head>
 <title>Card Games by Genre</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript">
+  function showform(dowhat) {
+    /*
+    * four DIVS: browse, insert, update, delete
+    * this function sets one visible the others not
+    */
+    if (dowhat == 'insert'){
+      document.getElementById('browse').style.display = 'none';
+      document.getElementById('insert').style.display = 'block';
+      document.getElementById('update').style.display = 'none';
+      document.getElementById('delete').style.display = 'none';
+    }
+    else if (dowhat == 'update'){
+      document.getElementById('browse').style.display = 'none';
+      document.getElementById('insert').style.display = 'none';
+      document.getElementById('update').style.display = 'block';
+      document.getElementById('delete').style.display = 'none';
+    }
+    else if (dowhat == 'delete'){
+      document.getElementById('browse').style.display = 'none';
+      document.getElementById('insert').style.display = 'none';
+      document.getElementById('update').style.display = 'none';
+      document.getElementById('delete').style.display = 'block';
+    }
+    else if (dowhat == 'all'){
+      document.getElementById('browse').style.display = 'block';
+      document.getElementById('insert').style.display = 'block';
+      document.getElementById('update').style.display = 'block';
+      document.getElementById('delete').style.display = 'block';
+    }
+    else { //by default display browse
+      document.getElementById('browse').style.display = 'block';
+      document.getElementById('insert').style.display = 'none';
+      document.getElementById('update').style.display = 'none';
+      document.getElementById('delete').style.display = 'none';
+    }
+  }
+  function newCardGame_genre() { showform('insert'); }
+  function updateCardGame_genre(id) { showform('update'); }
+  function deleteCardGame_genre(id) { showform ('delete'); }
+  function browseCardGame_genre() { showform ('browse'); }
+  function showAll() { showform ('all'); }
+</script>
 </head>
 
 <body>
@@ -13,32 +56,32 @@
   <p><a href="#" onClick="showAll()">Display all forms</a> </p>
   <table border="1" cellpadding="5">
   <tr>
-    <th><a href="#">New</a></th>
+    <th><a href="#" onclick="newCardGame_genres()">New</a></th>
     <th></th>
     <th>CardGame Title</th>
     <th>Genre</th>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onclick="updateCardGame_genre">Edit</a></td>
+    <td><a href="#" onclick="deleteCardGame_genre">Delete</a></td>
     <td>Magic Trading Card Game</td>
     <td>Dice</td>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onclick="updateCardGame_genre">Edit</a></td>
+    <td><a href="#" onclick="deleteCardGame_genre">Delete</a></td>
     <td >Magic Trading Card Game</td>
     <td>Tactical</td>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onclick="updateCardGame_genre">Edit</a></td>
+    <td><a href="#" onclick="deleteCardGame_genre">Delete</a></td>
     <td >Pokemon Trading Card Game</td>
     <td>Cute</td>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onclick="updateCardGame_genre">Edit</a></td>
+    <td><a href="#" onclick="deleteCardGame_genre">Delete</a></td>
     <td >Arkham Horror: The Card Game</td>
     <td>Horror</td>
   </tr>
@@ -60,7 +103,7 @@
             <label> Genre </label> <input type="text" name="genre_type">
           </fieldset>
           <input class="btn" type="submit" id="addrelationship" value="Add a Genre relationship">
-          <input class="btn" type="button" value="Cancel">
+          <input class="btn" type="button" value="Cancel" onclick="browseCardGame_genre">
 	</form> <!--add new genre-->
 </div><!-- insert -->
 
@@ -81,7 +124,7 @@
             <label> Genre </label> <input type="text"  name="NULL" value="NULL">
     </fieldset>
     <input class="btn" type="submit" id="UpdateGenre" value="Save Genre">
-          <input class="btn" type="button" value="Cancel" >
+          <input class="btn" type="button" value="Cancel" onclick="browseCardGame_genre">
   </form> 
 </div><!-- update -->
 <p>&nbsp;</p>
@@ -102,7 +145,7 @@
             
     </fieldset>
     <input class="delete" type="submit" id="DeleteGenre" value="Delete Genre">
-          <input class="btn" type="button" value="Cancel" >
+          <input class="btn" type="button" value="Cancel" onclick="browseCardGame_genre">
   </form> 
 </div><!-- delete -->
 </body>
