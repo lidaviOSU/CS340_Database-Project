@@ -2,52 +2,96 @@
 <head>
 <title>Genres</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript">
+  function showform(dowhat) {
+    /*
+    * four DIVS: browse, insert, update, delete
+    * this function sets one visible the others not
+    */
+    if (dowhat == 'insert'){
+      document.getElementById('browse').style.display = 'none';
+      document.getElementById('insert').style.display = 'block';
+      document.getElementById('update').style.display = 'none';
+      document.getElementById('delete').style.display = 'none';
+    }
+    else if (dowhat == 'update'){
+      document.getElementById('browse').style.display = 'none';
+      document.getElementById('insert').style.display = 'none';
+      document.getElementById('update').style.display = 'block';
+      document.getElementById('delete').style.display = 'none';
+    }
+    else if (dowhat == 'delete'){
+      document.getElementById('browse').style.display = 'none';
+      document.getElementById('insert').style.display = 'none';
+      document.getElementById('update').style.display = 'none';
+      document.getElementById('delete').style.display = 'block';
+    }
+    else if (dowhat == 'all'){
+      document.getElementById('browse').style.display = 'block';
+      document.getElementById('insert').style.display = 'block';
+      document.getElementById('update').style.display = 'block';
+      document.getElementById('delete').style.display = 'block';
+    }
+    else { //by default display browse
+      document.getElementById('browse').style.display = 'block';
+      document.getElementById('insert').style.display = 'none';
+      document.getElementById('update').style.display = 'none';
+      document.getElementById('delete').style.display = 'none';
+    }
+  }
+  function newGenres() { showform('insert'); }
+  function updateGenres(id) { showform('update'); }
+  function deleteGenres(id) { showform ('delete'); }
+  function browseGenres() { showform ('browse'); }
+  function showAll() { showform ('all'); }
+</script>
 </head>
 
-<body>
+<body onload="browseGenres()">
 <h1>Genres</h1>
+<h2>See all genres in store below- Add, Update, Delete as needed</h2>
 
 [ <a href="CardGames.html">Card Games</a> | <a href="Genres.html">Genres</a>|<a href="cardgames_genres.html">Games by Genres</a>|<a href="Developers.html">Developers</a>| <a href="cardgame_developer.html">Games By Developers</a>| <a href="Sales.html">Sales</a> | <a href="Customers.html">Customers</a>]
 <p><strong>Browse Genres</strong></p>
 <table border="1" cellpadding="5">
   <tr>
-    <th><a href="#">New</a></th>
+    <th><em><a href="#" onClick="newGenres()">New</em></a></th>
     <th></th>
     <th>ID</th>
     <th>Genre Type</th>
     <th>Description</th>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onClick="updateGenres('this.genre_id')">Edit</a></td>
+    <td><a href="#" onClick="deleteGenres('this.genre_id')">Delete</a></td>
     <td align="right" >1</td>
     <td>Horror</td>
     <td>Very mature art</td>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onClick="updateGenres('this.genre_id')">Edit</a></td>
+    <td><a href="#" onClick="deleteGenres('this.genre_id')">Delete</a></td>
     <td align="right" >2</td>
     <td >Tactical</td>
     <td>Highly skill based game</td>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onClick="updateGenres('this.genre_id')">Edit</a></td>
+    <td><a href="#" onClick="deleteGenres('this.genre_id')">Delete</a></td>
     <td align="right" >3</td>
     <td >Cute</td>
     <td>Cute art, appeals to kids and young adults</td>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onClick="updateGenres('this.genre_id')">Edit</a></td>
+    <td><a href="#" onClick="deleteGenres('this.genre_id')">Delete</a></td>
     <td align="right" >4</td>
     <td >Mature</td>
     <td>Mature art</td>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onClick="updateGenres('this.genre_id')">Edit</a></td>
+    <td><a href="#" onClick="deleteGenres('this.genre_id')">Delete</a></td>
     <td align="right" >5</td>
     <td >Dice</td>
     <td>Dice rolling involved in game</td>
@@ -63,7 +107,7 @@
             <label> Description </label> <input type="text" name="description">
           </fieldset>
           <input class="btn" type="submit" id="addgenre" value="Add a Genre">
-          <input class="btn" type="button" value="cancel">
+          <input class="btn" type="button" value="Cancel" onclick="browseGenres()">
 	</form> <!--add new genre-->
 </div><!-- insert -->
 
@@ -77,7 +121,7 @@
             <label> Description </label> <input type="text"  name="description" value="Very mature art">
     </fieldset>
     <input class="btn" type="submit" id="UpdateGenre" value="Save Genre">
-          <input class="btn" type="button" value="cancel" >
+          <input class="btn" type="button" value="Cancel" onclick="browseGenres()">
   </form> 
 </div><!-- update -->
 <p>&nbsp;</p>
@@ -90,8 +134,8 @@
             <label> Genre Type </label> Horror
             
     </fieldset>
-    <input class="btn" type="submit" id="DeleteGenre" value="Delete Genre">
-          <input class="btn" type="button" value="cancel" >
+    <input class="delete" type="submit" id="DeleteGenre" value="Delete Genre">
+          <input class="btn" type="button" value="Cancel" onclick="browseGenres()">
   </form> 
 </div><!-- delete -->
 </body>

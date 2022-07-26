@@ -49,13 +49,14 @@
 
 <body onload="browseCustomers()">
 <h1>Customers</h1>
+<h2>See Customer info below- Add , Update, Delete as needed </h2>
 
 [ <a href="CardGames.html">Card Games</a> | <a href="Genres.html">Genres</a>|<a href="cardgames_genres.html">Games by Genres</a>|<a href="Developers.html">Developers</a>| <a href="cardgame_developer.html">Games By Developers</a>| <a href="Sales.html">Sales</a> | <a href="Customers.html">Customers</a>]
 <div id="browse" style="display: block">
 <p><strong>Browse Customers</strong></p>
 <table border="1" cellpadding="5">
   <tr>
-    <th><a href="#" onClick="newCustomer()">New</a></th>
+    <th><em><a href="#" onClick="newCustomer()">New</em></a></th>
     <th></th>
     <th>Customer_id</th>
     <th>Name</th>
@@ -112,7 +113,7 @@
             <label>email</label> <input type="text" name="email">
           </fieldset>
           <input class="btn" type="submit" id="add_customer" value="Add a Customer">
-          <input class="btn" type="button" value="cancel" onClick="browseCustomers()">
+          <input class="btn" type="button" value="Cancel" onClick="browseCustomers()">
 	</form> <!--add new Customer-->
 </div><!-- insert -->
 
@@ -128,7 +129,7 @@
           <label>email</label> <input type="text" name="email" value="superdoe@yahoo.com">
     </fieldset>
     <input class="btn" type="submit" id="UpdateCustomer" value="Save Customer">
-          <input class="btn" type="button" value="cancel" onClick="browseCustomers()">
+          <input class="btn" type="button" value="Cancel" onClick="browseCustomers()">
   </form> 
 </div><!-- update -->
 <p>&nbsp;</p>
@@ -140,8 +141,8 @@
           <label>ID:</label> 1
             
     </fieldset>
-    <input class="btn" type="submit" id="DeleteCustomer" value="Delete Customer">
-          <input class="btn" type="button" value="cancel" onClick="browseCustomers()" >
+    <input class="delete" type="submit" id="DeleteCustomer" value="Delete Customer">
+          <input class="btn" type="button" value="Cancel" onClick="browseCustomers()" >
   </form> 
 </div><!-- delete -->
 </body>

@@ -1,75 +1,129 @@
 <html>
 <head>
-<title>Sale Details</title>
+<title>Invoice Details</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript">
+  function showform(dowhat) {
+    /*
+    * four DIVS: browse, insert, update, delete
+    * this function sets one visible the others not
+    */
+    if (dowhat == 'insert'){
+      document.getElementById('browse').style.display = 'none';
+      document.getElementById('insert').style.display = 'block';
+      document.getElementById('update').style.display = 'none';
+      document.getElementById('delete').style.display = 'none';
+    }
+    else if (dowhat == 'update'){
+      document.getElementById('browse').style.display = 'none';
+      document.getElementById('insert').style.display = 'none';
+      document.getElementById('update').style.display = 'block';
+      document.getElementById('delete').style.display = 'none';
+    }
+    else if (dowhat == 'delete'){
+      document.getElementById('browse').style.display = 'none';
+      document.getElementById('insert').style.display = 'none';
+      document.getElementById('update').style.display = 'none';
+      document.getElementById('delete').style.display = 'block';
+    }
+    else if (dowhat == 'all'){
+      document.getElementById('browse').style.display = 'block';
+      document.getElementById('insert').style.display = 'block';
+      document.getElementById('update').style.display = 'block';
+      document.getElementById('delete').style.display = 'block';
+    }
+    else { //by default display browse
+      document.getElementById('browse').style.display = 'block';
+      document.getElementById('insert').style.display = 'none';
+      document.getElementById('update').style.display = 'none';
+      document.getElementById('delete').style.display = 'none';
+    }
+  }
+  function newInvoiceLines() { showform('insert'); }
+  function updateInvoiceLines(id) { showform('update'); }
+  function deleteInvoiceLines(id) { showform ('delete'); }
+  function browseInvoiceLines() { showform ('browse'); }
+  function showAll() { showform ('all'); }
+</script>
 </head>
 
-<body>
-<h1>Sale details</h1>
+<body onload="browseInvoiceLines()">
+<h1>Invoice details</h1>
+<h2>Add, update, and delete using below tools</h2>
 
 [ <a href="CardGames.html">Card Games</a> | <a href="Genres.html">Genres</a>|<a href="cardgames_genres.html">Games by Genres</a>|<a href="Developers.html">Developers</a>| <a href="cardgame_developer.html">Games By Developers</a>| <a href="Sales.html">Sales</a> | <a href="Customers.html">Customers</a>]
 <p><strong>Browse Sales</strong></p>
 <table border="1" cellpadding="5">
   <tr>
-    <th><a href="#">New</a></th>
+    <th><em><a href="#" onClick="newInvoiceLines()">New</a></em></th>
     <th></th>
     <th>ID</th>
     <th>Customer ID</th>
     <th>Purchase qty</th>
     <th>Total Cost</th>
+    <th>Card Game ID</th>
+    <th>Puchase ID</th>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onClick="updateInvoiceLines('this.invoiceline_id')">Edit</a></td>
+    <td><a href="#" onClick="deleteInvoiceLines('this.invoiceline_id')">Delete</a></td>
     <td align="right" >1</td>
     <td >1</td>
     <td >3</td>
     <td >60.00</td>
+    <td>2</td>
+    <td>1</td>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onClick="updateInvoiceLines('this.invoiceline_id')">Edit</a></td>
+    <td><a href="#" onClick="deleteInvoiceLines('this.invoiceline_id')">Delete</a></td>
     <td align="right" >2</td>
     <td >1</td>
     <td >1</td>
     <td >8.99</td>
+    <td>3</td>
+    <td>2</td>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onClick="updateInvoiceLines('this.invoiceline_id')">Edit</a></td>
+    <td><a href="#" onClick="deleteInvoiceLines('this.invoiceline_id')">Delete</a></td>
     <td align="right" >3</td>
     <td >3</td>
     <td >5</td>
     <td >60.95</td>
+    <td>1</td>
+    <td>4</td>
   </tr>
   <tr>
-    <td><a href="#">Edit</a></td>
-    <td><a href="#">Delete</a></td>
+    <td><a href="#" onClick="updateInvoiceLines('this.invoiceline_id')">Edit</a></td>
+    <td><a href="#" onClick="deleteInvoiceLines('this.invoiceline_id')">Delete</a></td>
     <td align="right" >4</td>
     <td >4</td>
     <td >1</td>
     <td >74.99</td>
+    <td>1</td>
+    <td>3</td>
   </tr>
 </table>
 <p>&nbsp;</p>
 </div> <!-- browse -->
 <div id="insert" style="display: block">
     <form id="addSale">
-        <legend><strong>Add Sale</strong></legend>
+        <legend><strong>Add Invoice</strong></legend>
           <fieldset class="fields">
             <label> Customer id </label> <input type="text" name="customer id">
             <label> Purchase QTY </label> <input type="text" name="purchase qty">
             <label> Total Cost </label> <input type="text" name="totcost">
           </fieldset>
           <input class="btn" type="submit" id="addpurchasedate" value="Add Sale Details">
-          <input class="btn" type="button" value="cancel">
+          <input class="btn" type="button" value="Cancel" onClick="browseInvoiceLines()">
 	</form> <!--add new sale-->
 </div><!-- insert -->
 
 <p>&nbsp;</p>
 <div id="update" style="display: block">
   <form id="updateSale">
-      <legend><strong>Update Sale</strong></legend>
+      <legend><strong>Update Invoice</strong></legend>
           <fieldset class="fields">
           <label>ID:</label> 1
             <label> Customer id</label> <input type="text"  name="customer id" value="1">
@@ -77,21 +131,39 @@
             <label> Total Cost </label> <input type="text"  name="totcost" value="60.00">
     </fieldset>
     <input class="btn" type="submit" id="UpdateSale" value="Save Sale">
-          <input class="btn" type="button" value="cancel" >
+          <input class="btn" type="button" value="Cancel" onClick="browseInvoiceLines()">
   </form> 
 </div><!-- update -->
 <p>&nbsp;</p>
 <div id="delete" style="display: block">
   <form id="deleteSale">
-      <legend><strong>Delete Sale</strong></legend>
+      <legend><strong>Delete Invoice</strong></legend>
           <fieldset class="fields">
           <p>Are you sure you wish to delete the following?</p>
           <label>ID:</label> 1
             
     </fieldset>
     <input class="btn" type="submit" id="DeleteSale" value="Delete Sale">
-          <input class="btn" type="button" value="cancel" >
+          <input class="btn" type="button" value="Cancel" onClick="browseInvoiceLines()">
   </form> 
 </div><!-- delete -->
+<p>&nbsp;</p>
+<div id="search" style="display: block">
+  <form id="Search invoices">
+      <legend><strong>Search Invoices</strong></legend>
+          <fieldset class="fields">
+              <label> Filter </label> <select name="Filter">
+                <option value="0">&nbsp;</option>
+                <option value="1" selected>Customer ID</option>
+                <option value="2">Card Game ID</option>
+                <option value="3">Purchase ID</option>
+                </select>
+                <label> Criteria </label> <input type="text"  name="criteria" value="1">
+        </fieldset>
+    <input class="delete" type="submit" id="Search Invoices" value="Search">
+          <input class="btn" type="button" value="Cancel" onClick="browseInvoiceLines()">
+  </form> 
+</div><!-- delete -->
+
 </body>
 </html>

@@ -49,13 +49,14 @@
 
 <body onload="browseDeveloper()">
 <h1>Developers</h1>
+<h2>See Developers for Card Games Below- Add, Update, Delete as needed </h2>
 
 [ <a href="CardGames.html">Card Games</a> | <a href="Genres.html">Genres</a>|<a href="cardgames_genres.html">Games by Genres</a>|<a href="Developers.html">Developers</a>| <a href="cardgame_developer.html">Games By Developers</a>| <a href="Sales.html">Sales</a> | <a href="Customers.html">Customers</a>]
 <div id="browse" style="display: block">
 <p><strong>Browse Developers</strong></p>
 <table border="1" cellpadding="5">
   <tr>
-    <th><a href="#" onClick="newDeveloper()">New</a></th>
+    <th><em><a href="#" onClick="newDeveloper()">New</em></a></th>
     <th></th>
     <th>Dev id</th>
     <th>Dev name</th>
@@ -106,7 +107,7 @@
             <label> staff comments </label> <input type="text" name="staff comments">
           </fieldset>
           <input class="btn" type="submit" id="add_dev" value="Add a Dev">
-          <input class="btn" type="button" value="cancel" onClick="browseDeveloper()">
+          <input class="btn" type="button" value="Cancel" onClick="browseDeveloper()">
 	</form> <!--add new sale-->
 </div><!-- insert -->
 
@@ -121,7 +122,7 @@
           <label> staff comments </label> <input type="text" name="staff comments" value="">
     </fieldset>
     <input class="btn" type="submit" id="UpdateDev" value="Save Dev">
-          <input class="btn" type="button" value="cancel" onClick="browseDeveloper()">
+          <input class="btn" type="button" value="Cancel" onClick="browseDeveloper()">
   </form> 
 </div><!-- update -->
 <p>&nbsp;</p>
@@ -133,8 +134,8 @@
           <label>ID:</label> 1
             
     </fieldset>
-    <input class="btn" type="submit" id="DeleteDev" value="Delete Dev">
-          <input class="btn" type="button" value="cancel" onClick="browseDeveloper()">
+    <input class="delete" type="submit" id="DeleteDev" value="Delete Dev">
+          <input class="btn" type="button" value="Cancel" onClick="browseDeveloper()">
   </form> 
 </div><!-- delete -->
 </body>

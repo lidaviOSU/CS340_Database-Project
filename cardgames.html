@@ -49,13 +49,14 @@
 
 <body onload="browseCardGame()">
 <h1>Card Games</h1>
+<h2>See list of Card Games below, Add, Update, and Delete as needed </h2>
 
 [ <a href="CardGames.html">Card Games</a> | <a href="Genres.html">Genres</a>|<a href="cardgames_genres.html">Games by Genres</a>|<a href="Developers.html">Developers</a>| <a href="cardgame_developer.html">Games By Developers</a>| <a href="Sales.html">Sales</a> | <a href="Customers.html">Customers</a>]
 <div id="browse">
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
 <table border="1" cellpadding="5">
   <tr>
-    <th><a href="#" onClick="newCardGame()">New</a></th>
+    <th><em><a href="#" onClick="newCardGame()">New</a></em></th>
     <th></th>
     <th>Id</th>
     <th>Title</th>
@@ -112,9 +113,11 @@
             <label> Title </label> <input type="text" name="title">
             <label> Stock Qty </label> <input type="text" name="stock_qty">
             <label> Price </label> <input type="integer" name="price">
+            <label> Dev ID </label> <input type="integer" name="developer">
+            <label> Genre ID </label> <input type="integer" name="genre">
       </fieldset>
           <input class="btn" type="submit" id="addCardGame" value="Add Card Game">
-          <input class="btn" type="button" value="cancel" onClick="browseCardGame()">
+          <input class="btn" type="button" value="Cancel" onClick="browseCardGame()">
 	</form> 
 </div><!-- insert -->
 <p>&nbsp;</p>
@@ -127,9 +130,10 @@
             <label> Title </label> <input type="text" name="title" value="Arkham Horror: The Card Game">
             <label> Stock Qty </label> <input type="text" name="stock_qty" value="100">
             <label> Price Per Pack </label> <input name="price" value="20.00">
+            <label> Dev ID </label> <input type="integer" name="developer" value = "1">
       </fieldset>
           <input class="btn" type="submit" id="UpdateaCardGame" value="Save Card Game">
-          <input class="btn" type="button" value="cancel" onClick="browseCardGame()">
+          <input class="btn" type="button" value="Cancel" onClick="browseCardGame()">
 	</form> 
 </div><!-- update -->
 <p>&nbsp;</p>
@@ -143,8 +147,8 @@
             <label> <strong>Title</strong> Arkham Horror: The Card Game</label> 
             
     </fieldset>
-    <input class="btn" type="submit" id="DeletePerson" value="Delete Person">
-          <input class="btn" type="button" value="cancel" onClick="browseCardGame()">
+    <input class="delete" type="submit" id="DeletePerson" value="Delete Person">
+          <input class="btn" type="button" value="Cancel" onClick="browseCardGame()">
   </form> 
 </div><!-- delete -->
 
