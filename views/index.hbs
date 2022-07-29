@@ -1,0 +1,66 @@
+<!-- index.hbs -->
+<h1>The server is running!</h1>
+<p>If you see this text, the server is <strong>definitely</strong> working!</p>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="./js/delete_cardgame.js"></script>
+
+{{!-- Create a table --}}
+<table id="CardGames-table">
+
+    {{!-- Header section --}}
+    <thead>
+
+        {{!-- For just the first row, we print each key of the row object as a header cell so we
+        know what each column means when the page renders --}}
+        <tr>
+            {{#each data.[0]}}
+            <th>
+                {{@key}}
+            </th>
+            {{/each}}
+            <th>Delete</th>
+        </tr>
+    </thead>
+
+    {{!-- Body section --}}
+    <tbody>
+
+        {{!-- For each row, print the id, title,stock_qty, price_per_pack, and dev_id in order --}}
+        {{#each data}}
+        <tr data-value={{this.cardgame_id}}>
+            <td>{{this.cardgame_id}}</td>
+            <td>{{this.title}}</td>
+            <td>{{this.stock_qty}}</td>
+            <td>{{this.price_per_pack}}</td>
+            <td>{{this.dev_id}}</td>
+            <td><button onclick="deletecardgame({{this.cardgame_id}})">Delete</button></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+<script src="./delete_cardgame.js"></script>
+<!-- /views/index.hbs -->
+
+{{!-- Form to add a record to the table  --}}
+<h2>Insert New Card Game</h2>
+<p>To add a new card game, please enter information below and click 'Submit'!</p>
+<form id = "add-cardgame-form" method="POST" action="/add-cardgame">
+    <label for="input-title">Title: </label>
+    <input type="text" name="input-title" id="input-title">
+    
+    <label for="input-stock_qty">Stock Qty: </label>
+    <input type="number" name="input-stock_qty" id="input-stock_qty">
+
+    <label for="input-price_per_pack">Price: </label>
+    <input type="number" name="input-price_per_pack" id="input-price_per_pack" step=".01">
+
+    <label for="input-dev_id">Developer: </label>
+    <select name="input-dev_id" id="input-dev_id-ajax">
+        <option value="">Select a Developer</option>
+        {{#each dev_id}}
+        <option value="{{this.dev_id}}">{{this.dev_name}}</option>
+        {{/each}}
+    </select>
+
+    <input type="submit">
+</form>
